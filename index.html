@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ecoWattch </title>
+    <style>
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Full-page center alignment */
+        body {
+            font-family: "Neuton", serif;
+            background: #090d00;
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* Team Info Styling */
+        h1 {
+            text-transform: uppercase;
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: #ddd;
+        }
+
+        /* Under Construction Styling */
+        p {
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            display: inline-block;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            padding: 1.5em 2em;
+            width: 80%;
+            max-width: 600px;
+            margin: 20px auto;
+            position: relative;
+            z-index: 1;
+            font-size: 1.1rem;
+        }
+
+        /* Animated text style */
+        p span {
+            font: 700 2.5rem "Oswald", sans-serif;
+            letter-spacing: 0;
+            display: block;
+            text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
+            background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -webkit-animation: aitf 80s linear infinite;
+            -webkit-transform: translate3d(0, 0, 0);
+            -webkit-backface-visibility: hidden;
+        }
+
+        /* Animate Background Image */
+        @-webkit-keyframes aitf {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        /* Team Section */
+        .team {
+            margin: 20px 0;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        /* Contact Info */
+        .contact {
+            margin-top: 20px;
+            font-size: 1rem;
+            color: #bbb;
+        }
+
+        /* Logo */
+        .logo {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+
+        /* PDF Download Section */
+        .pdf-link {
+            margin-top: 20px;
+        }
+
+        .pdf-link a {
+            color: #ffcc00;
+            font-size: 1.2rem;
+            text-decoration: none;
+            border: 2px solid #ffcc00;
+            padding: 10px 15px;
+            border-radius: 5px;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .pdf-link a:hover {
+            background: #ffcc00;
+            color: #090d00;
+        }
+
+        /* Canvas for animation */
+        .experience__canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="experience">
+        <canvas class="experience__canvas"></canvas>
+    </div>
+    
+    <img src="logo.png" alt="Team Logo" class="logo"> <!-- Replace with actual logo -->
+    
+    <h1>Willow Project 2 - Under Construction</h1>
+    <h2> A Mobile App to Enhance Sustainability Awareness and Influence Student Behavior</h2>
+
+    <p>
+        <span>Welcome to Our Capstone Website</span>
+        We are currently working on our project. Stay tuned! ⚡
+    </p>
+
+    <div class="team">
+        <h2>Team Members:</h2>
+        <p>Avnish Kumar Sinha | Valentino Valero | Risa Walles | Collin Boyer</p>
+    </div>
+
+    <div class="contact">
+        <p>📧 Contact us: <a href="mailto:team@example.com" style="color: #fff;">aks526@nau.edu</a></p>
+    </div>
+
+    <div class="pdf-link">
+        <a href="https://drive.google.com/file/d/1Rw_7g-Nh1Xjyzieh6SpWw-QYg1P_51Tg/view?usp=drive_link" target="_blank">
+            View Project Description (PDF)
+        </a>
+    </div>
+</body>
+</html>
