@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Archive</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        font-family: "Helvetica", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        box-sizing: border-box;
+        line-height: 1;
+      }
+
+      .project-archive {
+        background-color: #ffffff;
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .content-wrapper {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 83.99%);
+        background-size: cover;
+        background-position: 50% 50%;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .blur-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(20px) brightness(80%);
+        -webkit-backdrop-filter: blur(20px) brightness(80%);
+        background: linear-gradient(180deg, rgba(32.57, 32.57, 32.57, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+      }
+
+      .navbar {
+        position: absolute;
+        width: 100%;
+        height: 48px;
+        top: 42px;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 45px;
+      }
+
+      .logo {
+        width: 162px;
+        height: 48px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 40px;
+      }
+
+      .nav-link {
+        font-family: "Helvetica Light", Helvetica, sans-serif;
+        font-weight: 400;
+        color: #fdecef;
+        font-size: 20px;
+        text-decoration: none;
+      }
+
+      .hamburger {
+        width: 30px;
+        height: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+      }
+
+      .hamburger-line {
+        width: 100%;
+        height: 4px;
+        background-color: #fdecef;
+      }
+
+      .main-content {
+        padding: 143px 45px;
+        color: #ffffff;
+        position: relative;
+        z-index: 1;
+        width: 100%;
+      }
+
+      h1 {
+        font-family: "Helvetica Light", Helvetica, sans-serif;
+        font-weight: 400;
+        font-size: 80px;
+        margin-bottom: 66px;
+      }
+
+      h2 {
+        font-family: "Helvetica-Bold", Helvetica, sans-serif;
+        font-weight: 700;
+        font-size: 60px;
+        margin-bottom: 20px;
+      }
+
+      .section {
+        margin-bottom: 60px;
+      }
+
+      .list {
+        font-family: "Helvetica Light", Helvetica, sans-serif;
+        font-weight: 400;
+        color: #5367c4;
+        font-size: 25px;
+        line-height: 1.5;
+      }
+
+      p {
+        font-family: "Helvetica Light", Helvetica, sans-serif;
+        font-weight: 400;
+        color: #ffffff;
+        font-size: 25px;
+        line-height: 1.5;
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="project-archive">
+      <div class="content-wrapper">
+        <div class="blur-overlay"></div>
+        <nav class="navbar">
+          <img class="logo" src="img/logo1.png" alt="Logo" />
+          <div class="nav-links">
+            <a href="https://github.com/avnishsinha/ecoWattch" class="nav-link">About</a>
+            <a href="https://github.com/avnishsinha/ecoWattch" class="nav-link">Demo</a>
+            <a href="https://github.com/avnishsinha/ecoWattch" class="nav-link">Team</a>
+            <a href="https://github.com/avnishsinha/ecoWattch" class="nav-link">Timeline</a>
+          </div>
+          <div class="hamburger">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </div>
+        </nav>
+        <div class="main-content">
+          <h1>Project Archive.</h1>
+          <section id="deliverables" class="section">
+            <h2>Deliverables</h2>
+            <ul class="list">
+              <li>Blah</li>
+              <li>Blah</li>
+              <li>Blah</li>
+              <li>Blah</li>
+              <li>Blah</li>
+            </ul>
+          </section>
+          <section id="meeting-minutes" class="section">
+            <h2>Meeting Minutes</h2>
+            <ul class="list">
+              <li>Blah</li>
+              <li>Blah</li>
+              <li>Blah</li>
+              <li>Blah</li>
+              <li>Blah</li>
+            </ul>
+          </section>
+          <section id="competitor-products" class="section">
+            <h2>Competitor Products</h2>
+            <p>
+              In bibendum scelerisque amet arcu risus ipsum netus auctor. Quis iaculis diam nibh erat leo dolor aenean.
+              Aenean facilisis dui risus dignissim vel leo, non ut. Malesuada accumsan fames ex nisi nunc turpis
+              suspendisse ornare. Sem risus interdum facilisis; posuere massa egestas nisi. Tempus eget leo magna
+              efficitur magna. Natoque porttitor fames vehicula turpis montes. Aliquam dapibus curae praesent consequat
+              molestie magna montes?
+            </p>
+          </section>
+          <section id="technologies-used" class="section">
+            <h2>Technologies Used</h2>
+            <p>
+              In bibendum scelerisque amet arcu risus ipsum netus auctor. Quis iaculis diam nibh erat leo dolor aenean.
+              Aenean facilisis dui risus dignissim vel leo, non ut. Malesuada accumsan fames ex nisi nunc turpis
+              suspendisse ornare. Sem risus interdum facilisis; posuere massa egestas nisi. Tempus eget leo magna
+              efficitur magna. Natoque porttitor fames vehicula turpis montes. Aliquam dapibus curae praesent consequat
+              molestie magna montes?
+            </p>
+          </section>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

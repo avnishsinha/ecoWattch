@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Demo</title>
+    <style>
+      /* Original CSS code should be injected here */
+
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: "Helvetica", sans-serif;
+        line-height: 1.6;
+        color: #ffffff;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 83.99%);
+      }
+
+      .container {
+        max-width: 1728px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      .backdrop {
+        min-height: 100vh;
+        backdrop-filter: blur(40px) brightness(100%);
+        background: linear-gradient(180deg, rgba(32.57, 32.57, 32.57, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+      }
+
+      header {
+        padding: 42px 0;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        width: 162px;
+        height: 48px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 30px;
+      }
+
+      .nav-links a {
+        color: #fdecef;
+        text-decoration: none;
+        font-size: 20px;
+      }
+
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 7px;
+        cursor: pointer;
+      }
+
+      .hamburger span {
+        display: block;
+        width: 30px;
+        height: 4px;
+        background-color: #fdecef;
+      }
+
+      main {
+        padding: 50px 0;
+      }
+
+      h1 {
+        font-size: 80px;
+        font-weight: 400;
+        margin-bottom: 30px;
+      }
+
+      .content {
+        display: flex;
+        gap: 50px;
+        margin-bottom: 50px;
+      }
+
+      .text-content {
+        flex: 1;
+      }
+
+      .image-placeholder {
+        flex: 1;
+        background-color: #23232399;
+        border-radius: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 80px;
+        font-weight: 700;
+        height: 286px;
+      }
+
+      .video-placeholder {
+        background-color: #23232399;
+        border-radius: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 80px;
+        font-weight: 700;
+        height: 291px;
+        margin-top: 50px;
+      }
+
+      @media (max-width: 1024px) {
+        .content {
+          flex-direction: column;
+        }
+
+        .image-placeholder,
+        .video-placeholder {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+
+        .hamburger {
+          display: flex;
+        }
+
+        h1 {
+          font-size: 60px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="backdrop">
+      <div class="container">
+        <header>
+          <nav>
+            <img class="logo" src="img/logo1.png" alt="Logo" />
+            <div class="nav-links">
+              <a href="#about">About</a>
+              <a href="#demo">Demo</a>
+              <a href="#team">Team</a>
+              <a href="#timeline">Timeline</a>
+            </div>
+            <div class="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </nav>
+        </header>
+        <main>
+          <h1>Project Demo</h1>
+          <div class="content">
+            <div class="text-content">
+              <p>
+                Lorem ipsum odor amet, consectetuer adipiscing elit. In neque primis accumsan sit rutrum iaculis.
+                Tristique diam maecenas laoreet mus mauris ornare ut ultricies. Sodales sapien per convallis condimentum
+                eu. Euismod parturient ut vel himenaeos ut interdum nec maecenas. Sapien potenti luctus donec dis,
+                mollis tempus! Non sem curabitur posuere amet tempor massa. Vehicula nam eget suspendisse fermentum amet
+                ut fames elit nec.
+              </p>
+            </div>
+            <div class="image-placeholder">PHOTO</div>
+          </div>
+          <p>
+            In bibendum scelerisque amet arcu risus ipsum netus auctor. Quis iaculis diam nibh erat leo dolor aenean.
+            Aenean facilisis dui risus dignissim vel leo, non ut. Malesuada accumsan fames ex nisi nunc turpis
+            suspendisse ornare. Sem risus interdum facilisis; posuere massa egestas nisi. Tempus eget leo magna
+            efficitur magna. Natoque porttitor fames vehicula turpis montes. Aliquam dapibus curae praesent consequat
+            molestie magna montes?
+          </p>
+          <div class="image-placeholder">PHOTO</div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

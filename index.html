@@ -3,160 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ecoWattch </title>
     <style>
-        /* Reset styles */
-        * {
+        body, html {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Full-page center alignment */
-        body {
-            font-family: "Neuton", serif;
-            background: #090d00;
-            color: rgba(255, 255, 255, 0.8);
-            text-align: center;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            height: 100vh;
-            position: relative;
-        }
-
-        /* Team Info Styling */
-        h1 {
-            text-transform: uppercase;
-            font-size: 2.5rem;
-            color: #fff;
-            margin-bottom: 10px;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            font-weight: 300;
-            color: #ddd;
-        }
-
-        /* Under Construction Styling */
-        p {
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            display: inline-block;
-            border: 2px solid rgba(255, 255, 255, 0.4);
-            padding: 1.5em 2em;
-            width: 80%;
-            max-width: 600px;
-            margin: 20px auto;
-            position: relative;
-            z-index: 1;
-            font-size: 1.1rem;
-        }
-
-        /* Animated text style */
-        p span {
-            font: 700 2.5rem "Oswald", sans-serif;
-            letter-spacing: 0;
-            display: block;
-            text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
-            background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            -webkit-animation: aitf 80s linear infinite;
-            -webkit-transform: translate3d(0, 0, 0);
-            -webkit-backface-visibility: hidden;
-        }
-
-        /* Animate Background Image */
-        @-webkit-keyframes aitf {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 100% 50%; }
-        }
-
-        /* Team Section */
-        .team {
-            margin: 20px 0;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-
-        /* Contact Info */
-        .contact {
-            margin-top: 20px;
-            font-size: 1rem;
-            color: #bbb;
-        }
-
-        /* Logo */
-        .logo {
-            width: 150px;
-            margin-bottom: 20px;
-        }
-
-        /* PDF Download Section */
-        .pdf-link {
-            margin-top: 20px;
-        }
-
-        .pdf-link a {
-            color: #ffcc00;
-            font-size: 1.2rem;
-            text-decoration: none;
-            border: 2px solid #ffcc00;
-            padding: 10px 15px;
-            border-radius: 5px;
-            display: inline-block;
-            transition: 0.3s;
-        }
-
-        .pdf-link a:hover {
-            background: #ffcc00;
-            color: #090d00;
-        }
-
-        /* Canvas for animation */
-        .experience__canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
-            z-index: 0;
+            overflow: hidden;
+        }
+        .main-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            background: url('img/bg-image.png') no-repeat center center;
+            background-size: cover;
+        }
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100px; /* Adjust the size as needed */
+            height: auto;
+        }
+        .text-block {
+            width: 770px;
+            height: 177px;
+            left: 94px;
+            top: 337px;
+            position: absolute;
+            font-size: 80px;
+            font-family: 'Helvetica Light', sans-serif;
+            font-weight: 400;
+            word-wrap: break-word;
+        }
+        .text-block span:nth-child(odd) {
+            color: #B5C332;
+        }
+        .text-block span:nth-child(even) {
+            color: #FDECEF;
+        }
+        .info-box {
+            width: 350px;
+            height: 318px;
+            position: absolute;
+            background: linear-gradient(180deg, rgba(9.19, 9.19, 9.19, 0.20) 0%, rgba(23.37, 23.37, 23.37, 0.20) 100%);
+            border-radius: 30px;
+            backdrop-filter: blur(40px);
+        }
+        .info-box .number {
+            position: absolute;
+            color: #828282;
+            font-size: 80px;
+            font-family: 'Helvetica Light', sans-serif;
+            font-weight: 400;
+            word-wrap: break-word;
+        }
+        .info-box .title {
+            width: 264px;
+            height: 29px;
+            position: absolute;
+            color: #FDECEF;
+            font-size: 25px;
+            font-family: Helvetica, sans-serif;
+            font-weight: 700;
+            word-wrap: break-word;
+        }
+        .info-box .description {
+            width: 303px;
+            height: 140px;
+            position: absolute;
+            color: #6E6E6E;
+            font-size: 15px;
+            font-family: 'Helvetica Light', sans-serif;
+            font-weight: 400;
+            word-wrap: break-word;
+        }
+        .nav-bar {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 20px;
+        }
+        .nav-bar a {
+            color: #FDECEF;
+            font-size: 20px;
+            font-family: 'Helvetica Light', sans-serif;
+            font-weight: 400;
+            word-wrap: break-word;
+            text-decoration: none;
+        }
+        .menu-icon {
+            width: 30px;
+            height: 25px;
+            position: relative;
+        }
+        .menu-icon div {
+            width: 30px;
+            height: 3.57px;
+            position: absolute;
+            background: #FDECEF;
         }
     </style>
 </head>
 <body>
-    <div class="experience">
-        <canvas class="experience__canvas"></canvas>
-    </div>
-    
-    <img src="logo.png" alt="Team Logo" class="logo"> <!-- Replace with actual logo -->
-    
-    <h1>Willow Project 2 - Under Construction</h1>
-    <h2> A Mobile App to Enhance Sustainability Awareness and Influence Student Behavior</h2>
-
-    <p>
-        <span>Welcome to Our Capstone Website</span>
-        We are currently working on our project. Stay tuned! ⚡
-    </p>
-
-    <div class="team">
-        <h2>Team Members:</h2>
-        <p>Avnish Kumar Sinha | Valentino Valero | Risa Walles | Collin Boyer</p>
-    </div>
-
-    <div class="contact">
-        <p>📧 Contact us: <a href="mailto:team@example.com" style="color: #fff;">aks526@nau.edu</a></p>
-    </div>
-
-    <div class="pdf-link">
-        <a href="https://drive.google.com/file/d/1Rw_7g-Nh1Xjyzieh6SpWw-QYg1P_51Tg/view?usp=drive_link" target="_blank">
-            View Project Description (PDF)
-        </a>
+    <div class="main-container">
+        <img src="path/to/your/logo.png" alt="Logo" class="logo">
+        <div class="text-block">
+            <span>Watt</span><span>ch Your Power, </span><span>Watt</span><span>ch Your Impact.</span>
+        </div>
+        <div class="info-box" style="left: 50px; top: 749px;">
+            <div class="number" style="left: 22px; top: 7px;">01</div>
+            <div class="title" style="left: 22px; top: 105px;">The Problem</div>
+            <div class="description" style="left: 22px; top: 140px;">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus imperdiet nibh eu gravida. 
+                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
+                Suspendisse potenti. Duis porttitor eu diam in rhoncus. Nulla aliquet tortor at eros aliquet mattis. 
+                Vivamus congue consectetur diam non maximus.
+            </div>
+        </div>
+        <div class="info-box" style="left: 420px; top: 749px;">
+            <div class="number" style="left: 22px; top: 7px;">02</div>
+            <div class="title" style="left: 22px; top: 105px;">The Solution</div>
+        </div>
+        <div class="info-box" style="left: 790px; top: 749px;">
+            <div class="number" style="left: 22px; top: 7px;">03</div>
+            <div class="title" style="left: 22px; top: 105px;">Our Motivation</div>
+        </div>
+        <div class="info-box" style="left: 1160px; top: 749px;">
+            <div class="number" style="left: 22px; top: 7px;">04</div>
+            <div class="title" style="left: 22px; top: 105px;">Expected Outcome</div>
+        </div>
+        <div class="nav-bar">
+            <a href="about.html">About</a>
+            <a href="demo.html">Demo</a>
+            <a href="team.html">Team</a>
+            <a href="timeline.html">Timeline</a>
+            <div class="menu-icon">
+                <div style="top: 21.43px;"></div>
+                <div style="top: 0px;"></div>
+                <div style="top: 10.71px;"></div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
