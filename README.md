@@ -5,10 +5,10 @@ ecoWattch is a group project initiated for our **CS 476 Capstone** and will cont
 
 # Developers
 
-* **Avnish** - *Initial work* - [avnishsinha](https://github.com/avnishsinha)
-* **Valentino Valero** - *Initial work* - [vsv7nau](https://github.com/vsv7nauhttps://github.com/vsv7nau)
-* **Collin Boyer** - *Initial work* - [ZenzeroBro](https://github.com/ZenzeroBro)
-* **Risa Walles** - *Initial work* - [Rmw395](https://github.com/rmw395)
+* **Avnish** - *Web Dev, Coder* - [avnishsinha](https://github.com/avnishsinha)
+* **Valentino Valero** - *Web Design* - [vsv7nau](https://github.com/vsv7nauhttps://github.com/vsv7nau)
+* **Collin Boyer** - *Coder* - [ZenzeroBro](https://github.com/ZenzeroBro)
+* **Risa Walles** - *Coder* - [Rmw395](https://github.com/rmw395)
 
 ## License
 
