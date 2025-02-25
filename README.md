@@ -1,35 +1,26 @@
+Here's your updated README file:  
 
-# 🌿 ecoWattch Version 1.0.0
+---
 
-ecoWattch is a group project initiated for our **CS 476 Capstone** and will continue development through 2025. The existing codebase, with limited functionality, remains available under an MIT license. Please proceed at your own risk.
+# 🌿 ecoWattch Version 1.0.1  
 
-# Developers
+ecoWattch is a group project initiated for our **CS 476 Capstone** and will continue development through 2025. The project website has now been uploaded to the **NAU CES Share Servers** and can be accessed at:  
 
-* **Avnish** - *Web Dev, Coder* - [avnishsinha](https://github.com/avnishsinha)
-* **Valentino Valero** - *Web Design* - [vsv7nau](https://github.com/vsv7nauhttps://github.com/vsv7nau)
-* **Collin Boyer** - *Coder* - [ZenzeroBro](https://github.com/ZenzeroBro)
-* **Risa Walles** - *Coder* - [Rmw395](https://github.com/rmw395)
+🔗 **[ecoWattch Project Website](https://sce.nau.edu/capstone/projects/CS/2025/ecoWattch_S25/)**  
 
-## License
+The website is nearing the completion of its initial setup. Future updates will focus on refining the user experience, optimizing performance, and implementing additional features. The existing codebase, with limited functionality, remains available under an **MIT license**. Please proceed at your own risk.  
 
-[MIT License](https://choosealicense.com/licenses/mit/)
+## 👨‍💻 Developers  
 
-Copyright (c) 2025 
+* **Avnish Kumar Sinha** - *Web Developer, Coder* - [avnishsinha](https://github.com/avnishsinha)  
+* **Valentino Valero** - *Web Designer* - [vsv7nau](https://github.com/vsv7nau)  
+* **Collin Boyer** - *Coder* - [ZenzeroBro](https://github.com/ZenzeroBro)  
+* **Risa Walles** - *Coder* - [Rmw395](https://github.com/rmw395)  
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+## 📜 License  
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+[MIT License](https://choosealicense.com/licenses/mit/)  
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+---
+
+Let me know if you'd like any further refinements! 🚀
