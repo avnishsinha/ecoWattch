@@ -1,262 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meet the Team</title>
+    <title>Team ecoWattch</title>
     <style>
-      body,
-      html {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        background-image: url("img/bg-image.png");
-        background-size: cover;
-        font-family: "Helvetica", sans-serif;
-        -webkit-font-smoothing: antialiased;
-        box-sizing: border-box;
-        line-height: 1.6;
-      }
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-image: url("img/bg-image.png");
+            background-size: cover;
+            font-family: "Helvetica", sans-serif;
+            -webkit-font-smoothing: antialiased;
+            box-sizing: border-box;
+            line-height: 1.6;
+        }
 
-      .page-wrapper {
-        min-height: 100vh;
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 83.99%);
-        backdrop-filter: blur(40px) brightness(100%);
-        -webkit-backdrop-filter: blur(40px) brightness(100%);
-      }
+        .page-wrapper {
+            min-height: 100vh;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 83.99%);
+            backdrop-filter: blur(40px) brightness(100%);
+            -webkit-backdrop-filter: blur(40px) brightness(100%);
+        }
 
-      .content {
-        max-width: 1640px;
-        margin: 0 auto;
-        padding: 42px 44px;
-      }
-
-      .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 86px;
-      }
-
-      .logo {
-        width: 350px;
-        height: 50px;
-      }
-
-      .nav-links {
-        display: flex;
-        gap: 40px;
-      }
-
-      .nav-link {
-        color: #fdecef;
-        font-size: 20px;
-        text-decoration: none;
-      }
-
-      .hamburger {
-        display: none;
-        flex-direction: column;
-        gap: 7px;
-        cursor: pointer;
-      }
-
-      .hamburger div {
-        width: 30px;
-        height: 4px;
-        background-color: #fdecef;
-      }
-
-      .main-content {
-        color: #ffffff;
-      }
-
-      h1 {
-        font-size: 100px;
-        font-weight: 400;
-        margin-bottom: 55px;
-      }
-
-      .team-member {
-        margin-bottom: 50px;
-      }
-
-      .team-member h2 {
-        font-size: 25px;
-        font-weight: 700;
-        margin-bottom: 10px;
-      }
-
-      .team-member p {
-        font-size: 25px;
-        font-weight: 400;
-      }
-
-      .roles-section {
-        margin-top: 40px;
-      }
-
-      .roles-section h2 {
-        font-size: 80px;
-        font-weight: 700;
-        margin-bottom: 30px;
-      }
-
-      .roles-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
-      }
-
-      .role {
-        text-align: center;
-      }
-
-      .role h3 {
-        font-size: 25px;
-        font-weight: 700;
-        margin-bottom: 10px;
-      }
-
-      .role p {
-        font-size: 25px;
-        font-weight: 400;
-      }
-
-      .group-photo {
-        background-color: rgba(70, 70, 70, 0.4);
-        border-radius: 20px;
-        height: 437px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 40px;
-      }
-
-      .group-photo p {
-        font-size: 100px;
-        font-weight: 700;
-        color: #ffffff;
-      }
-
-      @media (max-width: 768px) {
         .content {
-          padding: 20px;
+            max-width: 1640px;
+            margin: 0 auto;
+            padding: 42px 44px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 86px;
+        }
+
+        .logo {
+            width: 200px;
+            height: 50px;
+            cursor: pointer; /* Makes it clear it's clickable */
         }
 
         .nav-links {
-          display: none;
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-link {
+            color: #fdecef;
+            font-size: 20px;
+            text-decoration: none;
         }
 
         .hamburger {
-          display: flex;
+            display: none;
+            flex-direction: column;
+            gap: 7px;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 4px;
+            background-color: #fdecef;
+        }
+
+        .main-content {
+            color: #ffffff;
         }
 
         h1 {
-          font-size: 60px;
+            font-size: 100px;
+            font-weight: 400;
+            margin-bottom: 55px;
+        }
+
+        .team-member {
+            margin-bottom: 50px;
+        }
+
+        .team-member h2 {
+            font-size: 25px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .team-member p {
+            font-size: 25px;
+            font-weight: 400;
+        }
+
+        .roles-section {
+            margin-top: 40px;
         }
 
         .roles-section h2 {
-          font-size: 50px;
+            font-size: 80px;
+            font-weight: 700;
+            margin-bottom: 30px;
         }
 
         .roles-grid {
-          grid-template-columns: repeat(2, 1fr);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .role {
+            text-align: center;
+        }
+
+        .role h3 {
+            font-size: 25px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .role p {
+            font-size: 25px;
+            font-weight: 400;
+        }
+
+        .group-photo {
+            background-color: rgba(70, 70, 70, 0.4);
+            border-radius: 20px;
+            height: 437px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
         }
 
         .group-photo p {
-          font-size: 60px;
+            font-size: 100px;
+            font-weight: 700;
+            color: #ffffff;
         }
-      }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            h1 {
+                font-size: 60px;
+            }
+
+            .roles-section h2 {
+                font-size: 50px;
+            }
+
+            .roles-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .group-photo p {
+                font-size: 60px;
+            }
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <div class="page-wrapper">
-      <div class="content">
-        <nav class="navbar">
-          <img class="logo" src="img/logo1.png" alt="Logo" />
-          <div class="nav-links">
-            <a href="about.html" class="nav-link">About</a>
-            <a href="demo.html" class="nav-link">Demo</a>
-            <a href="team.html" class="nav-link">Team</a>
-            <a href="timeline.html" class="nav-link">Timeline</a>
-          </div>
-          <div class="hamburger">
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-        </nav>
-        <main class="main-content">
-          <h1>Meet the team.</h1>
-          <section class="team-members">
-            <article class="team-member">
-              <h2>Member 1:</h2>
-              <p>
-                Fusce ullamcorper, eros quis luctus tempus, diam lacus imperdiet lacus, ac fringilla eros lacus non
-                metus. Nullam mollis accumsan semper. Vestibulum a fermentum quam. Morbi tincidunt lectus nec dolor
-                semper, eu luctus sem feugiat. Proin varius massa et aliquam laoreet. Mauris laoreet felis vel odio
-                vehicula ultricies. Sed tempor massa vitae nibh condimentum aliquet. Nullam finibus, mauris in ultrices
-                vehicula, ipsum lacus vulputate enim, non tincidunt ipsum ligula et magna.
-              </p>
-            </article>
-            <article class="team-member">
-              <h2>Member 2:</h2>
-              <p>
-                Fusce ullamcorper, eros quis luctus tempus, diam lacus imperdiet lacus, ac fringilla eros lacus non
-                metus. Nullam mollis accumsan semper. Vestibulum a fermentum quam. Morbi tincidunt lectus nec dolor
-                semper, eu luctus sem feugiat. Proin varius massa et aliquam laoreet. Mauris laoreet felis vel odio
-                vehicula ultricies. Sed tempor massa vitae nibh condimentum aliquet. Nullam finibus, mauris in ultrices
-                vehicula, ipsum lacus vulputate enim, non tincidunt ipsum ligula et magna.
-              </p>
-            </article>
-            <article class="team-member">
-              <h2>Member 3:</h2>
-              <p>
-                Fusce ullamcorper, eros quis luctus tempus, diam lacus imperdiet lacus, ac fringilla eros lacus non
-                metus. Nullam mollis accumsan semper. Vestibulum a fermentum quam. Morbi tincidunt lectus nec dolor
-                semper, eu luctus sem feugiat. Proin varius massa et aliquam laoreet. Mauris laoreet felis vel odio
-                vehicula ultricies. Sed tempor massa vitae nibh condimentum aliquet. Nullam finibus, mauris in ultrices
-                vehicula, ipsum lacus vulputate enim, non tincidunt ipsum ligula et magna.
-              </p>
-            </article>
-            <article class="team-member">
-              <h2>Member 4:</h2>
-              <p>
-                Fusce ullamcorper, eros quis luctus tempus, diam lacus imperdiet lacus, ac fringilla eros lacus non
-                metus. Nullam mollis accumsan semper. Vestibulum a fermentum quam. Morbi tincidunt lectus nec dolor
-                semper, eu luctus sem feugiat. Proin varius massa et aliquam laoreet. Mauris laoreet felis vel odio
-                vehicula ultricies. Sed tempor massa vitae nibh condimentum aliquet. Nullam finibus, mauris in ultrices
-                vehicula, ipsum lacus vulputate enim, non tincidunt ipsum ligula et magna.
-              </p>
-            </article>
-          </section>
-          <section class="roles-section">
-            <h2>Roles and Responsibilities</h2>
-            <div class="roles-grid">
-              <div class="role">
-                <h3>Member 1</h3>
-                <p>Yuh<br />Yuh</p>
-              </div>
-              <div class="role">
-                <h3>Member 2</h3>
-                <p>Yuh<br />Yuh</p>
-              </div>
-              <div class="role">
-                <h3>Member 3</h3>
-                <p>Yuh<br />Yuh</p>
-              </div>
-              <div class="role">
-                <h3>Member 4</h3>
-                <p>Yuh<br />Yuh</p>
-              </div>
-            </div>
-          </section>
-          <div class="group-photo">
-            <p>GROUP PHOTO</p>
-          </div>
-        </main>
-      </div>
+        <div class="content">
+            <nav class="navbar">
+                <!-- Wrapped logo inside <a> tag to go back to home page -->
+                <a href="index.html">
+                    <img class="logo" src="img/logo1.png" alt="Logo" />
+                </a>
+                <div class="nav-links">
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="demo.html" class="nav-link">Demo</a>
+                    <a href="team.html" class="nav-link">Team</a>
+                    <a href="timeline.html" class="nav-link">Timeline</a>
+                </div>
+                <div class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </nav>
+            <main class="main-content">
+                <h1>Meet the team.</h1>
+                <section class="team-members">
+                    <article class="team-member">
+                        <h2>Collin Boyer:</h2>
+                        <p>Details about Collin...</p>
+                    </article>
+                    <article class="team-member">
+                        <h2>Avnish Kumar Sinha</h2>
+                        <p>Details about Avnish...</p>
+                    </article>
+                    <article class="team-member">
+                        <h2>Risa Walles</h2>
+                        <p>Details about Risa...</p>
+                    </article>
+                    <article class="team-member">
+                        <h2>Valentino Valero</h2>
+                        <p>Details about Valentino...</p>
+                    </article>
+                </section>
+                <section class="roles-section">
+                    <h2>Roles and Responsibilities</h2>
+                    <div class="roles-grid">
+                        <div class="role">
+                            <h3>Collin Boyer</h3>
+                            <p>Team Lead<br />Backend Dev</p>
+                        </div>
+                        <div class="role">
+                            <h3>Avnish Kumar Sinha</h3>
+                            <p>Web Developer<br />Coder</p>
+                        </div>
+                        <div class="role">
+                            <h3>Risa Walles</h3>
+                            <p>Coder<br />Backend Dev</p>
+                        </div>
+                        <div class="role">
+                            <h3>Valentino Valero</h3>
+                            <p>Web Designer<br />Architect</p>
+                        </div>
+                    </div>
+                </section>
+                <div class="group-photo">
+                    <p>GROUP PHOTO</p>
+                </div>
+            </main>
+        </div>
     </div>
-  </body>
+</body>
 </html>

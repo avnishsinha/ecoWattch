@@ -3,33 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ecoWattch</title>
     <style>
         body, html {
             margin: 0;
+
             padding: 0;
             width: 100%;
             height: 100%;
             overflow: hidden;
+            font-family: "Helvetica", sans-serif;
+            background: url('img/bg-image.png') no-repeat center center;
+            background-size: cover;
+            overflow-x: hidden;
         }
         .main-container {
             width: 100vw;
             height: 100vh;
             position: relative;
-            background: url('img/bg-image.png') no-repeat center center;
-            background-size: cover;
         }
         .logo {
             position: absolute;
             top: 20px;
             left: 20px;
-            width: 100px; /* Adjust the size as needed */
+            width: 120px; /* Adjusted size */
             height: auto;
         }
         .text-block {
             width: 770px;
             height: 177px;
             left: 94px;
-            top: 337px;
+            top: 200px; /* Adjusted position */
             position: absolute;
             font-size: 80px;
             font-family: 'Helvetica Light', sans-serif;
@@ -46,7 +50,7 @@
             width: 350px;
             height: 318px;
             position: absolute;
-            background: linear-gradient(180deg, rgba(9.19, 9.19, 9.19, 0.20) 0%, rgba(23.37, 23.37, 23.37, 0.20) 100%);
+            background: rgba(0, 0, 0, 0.5); /* Adjusted background */
             border-radius: 30px;
             backdrop-filter: blur(40px);
         }
@@ -78,37 +82,91 @@
             font-weight: 400;
             word-wrap: break-word;
         }
-        .nav-bar {
-            position: absolute;
-            top: 20px;
-            right: 20px;
+        .navbar {
             display: flex;
-            gap: 20px;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
         }
-        .nav-bar a {
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            margin-left: auto;
+        }
+        .nav-link {
             color: #FDECEF;
             font-size: 20px;
-            font-family: 'Helvetica Light', sans-serif;
-            font-weight: 400;
-            word-wrap: break-word;
             text-decoration: none;
         }
-        .menu-icon {
+        .hamburger {
             width: 30px;
             height: 25px;
-            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
         }
-        .menu-icon div {
-            width: 30px;
-            height: 3.57px;
-            position: absolute;
-            background: #FDECEF;
+        .hamburger-line {
+            width: 100%;
+            height: 4px;
+            background-color: #FDECEF;
+        }
+        .sidebar {
+            position: fixed;
+            right: -400px;
+            top: 0;
+            width: 400px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+            padding: 20px;
+            transition: right 0.3s ease;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .sidebar.active {
+            right: 0;
+        }
+        .team-members, .sponsor-info {
+            margin-bottom: 20px;
+        }
+        .team-member {
+            margin-bottom: 10px;
+        }
+        .archive-button {
+            background-color: #262626;
+            border: none;
+            color: #ffffff;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            align-self: flex-start;
         }
     </style>
 </head>
 <body>
     <div class="main-container">
-        <img src="path/to/your/logo.png" alt="Logo" class="logo">
+        <div class="navbar">
+            <img src="img/logo1.png" alt="Logo" class="logo">
+            <div class="nav-links">
+                <a href="about.html" class="nav-link">About</a>
+                <a href="demo.html" class="nav-link">Demo</a>
+                <a href="team.html" class="nav-link">Team</a>
+                <a href="timeline.html" class="nav-link">Timeline</a>
+            </div>
+            <div class="hamburger" onclick="toggleSidebar()">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </div>
+        </div>
         <div class="text-block">
             <span>Watt</span><span>ch Your Power, </span><span>Watt</span><span>ch Your Impact.</span>
         </div>
@@ -116,35 +174,65 @@
             <div class="number" style="left: 22px; top: 7px;">01</div>
             <div class="title" style="left: 22px; top: 105px;">The Problem</div>
             <div class="description" style="left: 22px; top: 140px;">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus imperdiet nibh eu gravida. 
-                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
-                Suspendisse potenti. Duis porttitor eu diam in rhoncus. Nulla aliquet tortor at eros aliquet mattis. 
-                Vivamus congue consectetur diam non maximus.
+                Buildings in the U.S. consume 76% of all electricity and account 
+                for 40% of total CO₂ emissions. Despite global efforts, the gap between 
+                actual climate performance and decarbonization goals continues to widen. Universities
+                and organizations need effective ways to monitor energy usage and influence behavior 
+                to reduce carbon footprints.            
             </div>
         </div>
         <div class="info-box" style="left: 420px; top: 749px;">
             <div class="number" style="left: 22px; top: 7px;">02</div>
             <div class="title" style="left: 22px; top: 105px;">The Solution</div>
+            <div class="description" style="left: 22px; top: 140px;">
+                Our project aims to develop a mobile application that provides real-time energy consumption
+                insights and actionable recommendations. This app will integrate with Willow's data platform 
+                to display energy trends, send alerts for peak consumption, and gamify energy-saving behaviors 
+                among students and staff. By leveraging real-time data, the app will drive awareness and influence sustainable habits.            
+            </div>
         </div>
         <div class="info-box" style="left: 790px; top: 749px;">
             <div class="number" style="left: 22px; top: 7px;">03</div>
             <div class="title" style="left: 22px; top: 105px;">Our Motivation</div>
+            <div class="description" style="left: 22px; top: 140px;">
+                Sustainability is a growing concern, and we believe technology can empower individuals
+                to make a difference. By providing real-time data and incentives, we hope to encourage 
+                energy-efficient behavior in university communities. This project aligns with global 
+                efforts to reduce greenhouse gas emissions and supports institutions in lowering their energy costs.            
+            </div>
         </div>
         <div class="info-box" style="left: 1160px; top: 749px;">
             <div class="number" style="left: 22px; top: 7px;">04</div>
             <div class="title" style="left: 22px; top: 105px;">Expected Outcome</div>
-        </div>
-        <div class="nav-bar">
-            <a href="about.html">About</a>
-            <a href="demo.html">Demo</a>
-            <a href="team.html">Team</a>
-            <a href="timeline.html">Timeline</a>
-            <div class="menu-icon">
-                <div style="top: 21.43px;"></div>
-                <div style="top: 0px;"></div>
-                <div style="top: 10.71px;"></div>
+            <div class="description" style="left: 22px; top: 140px;">
+                Increased awareness of energy consumption and emissions impact.
+                Behavioral changes that lead to more energy-efficient practices.
+                Reduced energy costs for Our institutions
+                Measurable reduction in carbon emissions through informed decision-making.
+                A scalable app that can be adapted for broader sustainability initiatives.
+     
             </div>
         </div>
     </div>
+    <aside class="sidebar">
+        <section class="team-members">
+            <h2>Our Team</h2>
+            <div class="team-member"><strong>Member 1:</strong> Avnish Kumar Sinha,</div>
+            <div class="team-member"><strong>Member 2:</strong> Collin Boyer,</div>
+            <div class="team-member"><strong>Member 3:</strong> Risa Walles,</div>
+            <div class="team-member"><strong>Member 4:</strong> Valention Valero,</div>
+        </section>
+        <section class="sponsor-info">
+            <h2>Our Sponsor</h2>
+            <p>OP Ravi,   
+                Director of Product, Energy Transformation  </p>
+        </section>
+        <button class="archive-button" onclick="location.href='archive.html'">Archive</button>
+    </aside>
+    <script>
+        function toggleSidebar() {
+            document.querySelector('.sidebar').classList.toggle('active');
+        }
+    </script>
 </body>
 </html>

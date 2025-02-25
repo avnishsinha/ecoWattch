@@ -1,232 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Willow - Saving the Planet</title>
     <style>
-      body,
-      html {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        font-family: "Helvetica", sans-serif;
-        line-height: 1.6;
-        color: #fdecef;
-        background-color: #090909;
-        background-image: url('img/bg-image.png');
-        background-size: cover;
-        background-position: center;
-      }
-
-      .container {
-        max-width: 1728px;
-        margin: 0 auto;
-        padding: 0 15px;
-      }
-
-      .hero {
-        background-image: url("img/bg-image.png");
-        background-size: cover;
-        background-position: center;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-      }
-
-      .hero h1 {
-        font-size: 5rem;
-        max-width: 1190px;
-        margin: 0 auto;
-      }
-
-      .navbar {
-        position: absolute;
-        top: 42px;
-        left: 45px;
-        right: 45px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .navbar-brand img {
-        width: 162px;
-        height: 48px;
-      }
-
-      .navbar-menu {
-        display: flex;
-        gap: 30px;
-      }
-
-      .navbar-menu a {
-        color: #fdecef;
-        text-decoration: none;
-        font-size: 20px;
-      }
-
-      .hamburger {
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
-      }
-
-      .hamburger div {
-        width: 30px;
-        height: 4px;
-        background-color: #fdecef;
-        margin: 3px 0;
-      }
-
-      .content {
-        padding: 80px 0;
-      }
-
-      .project-info {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 60px;
-      }
-
-      .project-info-item {
-        flex: 1;
-      }
-
-      .project-info-item h3 {
-        font-size: 25px;
-        font-weight: bold;
-        margin-bottom: 10px;
-      }
-
-      .project-info-item p {
-        font-size: 20px;
-      }
-
-      .section-title {
-        font-size: 80px;
-        font-weight: bold;
-        margin-bottom: 40px;
-      }
-
-      .section-content {
-        font-size: 25px;
-        margin-bottom: 60px;
-      }
-
-      .image-placeholder {
-        background-color: rgba(70, 70, 70, 0.4);
-        border-radius: 20px;
-        height: 547px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 80px;
-        font-weight: bold;
-        text-align: center;
-        margin-bottom: 60px;
-      }
-
-      @media (max-width: 768px) {
-        .navbar-menu {
-          display: none;
+        /* General Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: "Helvetica", sans-serif;
+            color: #ffffff;
+            background-color: #090909;
         }
 
-        .hamburger {
-          display: flex;
+        /* Navbar */
+        .navbar {
+            position: absolute;
+            top: 20px;
+            left: 45px;
+            right: 45px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .navbar-menu a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url("img/bg-image.png") no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
         }
 
         .hero h1 {
-          font-size: 3rem;
+            font-size: 4rem;
+            max-width: 1000px;
+        }
+
+        /* Content Sections */
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px;
+        }
+
+        .project-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        .project-info-item h3 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #aaa;
+        }
+
+        .project-info-item p {
+            font-size: 18px;
         }
 
         .section-title {
-          font-size: 60px;
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
         }
 
         .section-content {
-          font-size: 20px;
+            font-size: 20px;
+            margin-bottom: 30px;
         }
 
         .image-placeholder {
-          font-size: 40px;
-          height: 300px;
+            background-color: rgba(70, 70, 70, 0.4);
+            border-radius: 15px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 40px;
         }
-      }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .navbar-menu {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .project-info {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .image-placeholder {
+                height: 250px;
+                font-size: 18px;
+            }
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
+
+    <!-- Hero Section -->
     <header class="hero">
-      <nav class="navbar">
-        <a href="#" class="navbar-brand">
-          <img src="img/logo1.png" alt="Logo" />
-        </a>
-        <div class="navbar-menu">
-          <a href="#about">About</a>
-          <a href="#demo">Demo</a>
-          <a href="#team">Team</a>
-          <a href="#timeline">Timeline</a>
-        </div>
-        <div class="hamburger">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </nav>
-      <h1>Saving the planet doesn't have to be boring.</h1>
+        <nav class="navbar">
+            <!-- Wrapped the logo inside <a> tag to go back to home page -->
+            <a href="index.html">
+                <img src="img/logo1.png" alt="Logo" width="120">
+            </a>
+            <div class="navbar-menu">
+                <a href="about.html" class="nav-link">About</a>
+                <a href="demo.html" class="nav-link">Demo</a>
+                <a href="team.html" class="nav-link">Team</a>
+                <a href="timeline.html" class="nav-link">Timeline</a>
+            </div>
+        </nav>
+        <h1>Saving the planet doesn't have to be boring.</h1>
     </header>
-    <main class="content">
-      <div class="container">
+
+    <!-- Content -->
+    <main class="container">
         <section class="project-info">
-          <div class="project-info-item">
-            <h3>Client</h3>
-            <p>Willow</p>
-          </div>
-          <div class="project-info-item">
-            <h3>Organization</h3>
-            <p>NAU</p>
-          </div>
-          <div class="project-info-item">
-            <h3>Category</h3>
-            <p>Sustainability</p>
-          </div>
+            <div class="project-info-item">
+                <h3>Client</h3>
+                <p>Willow</p>
+            </div>
+            <div class="project-info-item">
+                <h3>Organization</h3>
+                <p>NAU</p>
+            </div>
+            <div class="project-info-item">
+                <h3>Category</h3>
+                <p>Sustainability</p>
+            </div>
         </section>
+
         <section id="about">
-          <h2 class="section-title">Project Details</h2>
-          <p class="section-content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus imperdiet nibh eu gravida.
-            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse
-            potenti. Duis porttitor eu diam in rhoncus. Nulla aliquet tortor at eros aliquet mattis. Vivamus congue
-            consectetur diam non maximus. Mauris faucibus augue non magna auctor congue. Sed et interdum ligula. Aliquam
-            erat volutpat. Nulla feugiat malesuada lectus vitae porta. Pellentesque eu quam tempor ex placerat blandit
-            porttitor sed ligula. Nam facilisis, odio id accumsan molestie, dolor libero varius metus, eget aliquet
-            purus ligula ac massa. Vivamus eleifend quam at ex pulvinar, in efficitur turpis vulputate. Nulla non dolor
-            tellus.
-          </p>
-          <div class="image-placeholder">PHOTO OF SOMETHING</div>
+            <h2 class="section-title">Project Details</h2>
+            <p class="section-content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus imperdiet nibh eu gravida.
+                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
+                Suspendisse potenti. Duis porttitor eu diam in rhoncus. Nulla aliquet tortor at eros aliquet mattis.
+                Vivamus congue consectetur diam non maximus.
+            </p>
+            <div class="image-placeholder">PHOTO OF SOMETHING</div>
         </section>
+
         <section id="process">
-          <h2 class="section-title">Dev Process &amp; Requirements</h2>
-          <p class="section-content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus imperdiet nibh eu gravida.
-            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse
-            potenti. Duis porttitor eu diam in rhoncus. Nulla aliquet tortor at eros aliquet mattis. Vivamus congue
-            consectetur diam non maximus. Mauris faucibus augue non magna auctor congue. Sed et interdum ligula. Aliquam
-            erat volutpat. Nulla feugiat malesuada lectus vitae porta. Pellentesque eu quam tempor ex placerat blandit
-            porttitor sed ligula. Nam facilisis, odio id accumsan molestie, dolor libero varius metus, eget aliquet
-            purus ligula ac massa. Vivamus eleifend quam at ex pulvinar, in efficitur turpis vulputate. Nulla non dolor
-            tellus.
-          </p>
+            <h2 class="section-title">Dev Process & Requirements</h2>
+            <p class="section-content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus imperdiet nibh eu gravida.
+                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
+                Suspendisse potenti. Duis porttitor eu diam in rhoncus. Nulla aliquet tortor at eros aliquet mattis.
+                Vivamus congue consectetur diam non maximus.
+            </p>
         </section>
-      </div>
     </main>
-    <script>
-      document.querySelector(".hamburger").addEventListener("click", function () {
-        document.querySelector(".navbar-menu").style.display =
-          document.querySelector(".navbar-menu").style.display === "none" ? "flex" : "none";
-      });
-    </script>
-  </body>
+
+</body>
 </html>
