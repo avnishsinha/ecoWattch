@@ -20,7 +20,3 @@ The website is nearing the completion of its initial setup. Future updates will 
 ## 📜 License  
 
 [MIT License](https://choosealicense.com/licenses/mit/)  
-
----
-
-Let me know if you'd like any further refinements! 🚀
