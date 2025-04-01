@@ -1,186 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project Archive</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-            font-family: "Helvetica", sans-serif;
-            background: url('img/bg-image.png') no-repeat center center;
-            background-size: cover;
-            color: #FDECEF;
-        }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Archive</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: "Helvetica", sans-serif;
+      color: #ffffff;
+      background: url('img/Rectangle 7.png') no-repeat center center;
+      background-size: cover;
+    }
 
-        .project-archive {
-            width: 100%;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            padding: 20px;
-        }
+    .navbar {
+      position: absolute;
+      top: 20px;
+      left: 45px;
+      right: 45px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        .navbar {
-            position: absolute;
-            width: 100%;
-            height: 48px;
-            top: 20px;
-            left: 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 45px;
-        }
+    .navbar-menu {
+      display: flex;
+      gap: 60px;
+    }
 
-        .logo {
-            width: 100px;
-            height: auto;
-            cursor: pointer; /* Makes it clear it's clickable */
-        }
+    .navbar-menu a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 18px;
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 60px;
-        }
+    .project-archive {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 120px;
+    }
 
-        .nav-link {
-            font-family: "Helvetica Light", Helvetica, sans-serif;
-            font-weight: 400;
-            color: #FDECEF;
-            font-size: 20px;
-            text-decoration: none;
-        }
+    .main-content {
+      max-width: 1200px;
+      width: 100%;
+      padding: 60px 20px;
+    }
 
-        .hamburger {
-            width: 30px;
-            height: 25px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            cursor: pointer;
-        }
+    h1 {
+      font-family: "Helvetica Light", Helvetica, sans-serif;
+      font-weight: 400;
+      font-size: 60px;
+      margin-bottom: 40px;
+      color: #FDECEF;
+    }
 
-        .hamburger-line {
-            width: 100%;
-            height: 4px;
-            background-color: #FDECEF;
-        }
+    h2 {
+      font-family: "Helvetica-Bold", Helvetica, sans-serif;
+      font-weight: 700;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
 
-        .main-content {
-            max-width: 1200px;
-            width: 100%;
-            padding: 60px 20px;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-        }
+    .section {
+      margin-bottom: 60px;
+    }
 
-        h1 {
-            font-family: "Helvetica Light", Helvetica, sans-serif;
-            font-weight: 400;
-            font-size: 60px;
-            margin-bottom: 40px;
-        }
+    .list {
+      font-family: "Helvetica Light", Helvetica, sans-serif;
+      font-weight: 400;
+      color: #3f63ff;
+      font-size: 18px;
+      line-height: 1.8;
+    }
 
-        h2 {
-            font-family: "Helvetica-Bold", Helvetica, sans-serif;
-            font-weight: 700;
-            font-size: 40px;
-            margin-bottom: 20px;
-        }
+    p {
+      font-family: "Helvetica Light", Helvetica, sans-serif;
+      font-weight: 400;
+      color: #FDECEF;
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: 100%;
+    }
 
-        .section {
-            margin-bottom: 40px;
-        }
+    .row {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 60px;
+    }
 
-        .list {
-            font-family: "Helvetica Light", Helvetica, sans-serif;
-            font-weight: 400;
-            color: #B5C332;
-            font-size: 20px;
-            line-height: 1.5;
-        }
+    .column {
+      flex: 1 1 45%;
+      min-width: 300px;
+    }
 
-        p {
-            font-family: "Helvetica Light", Helvetica, sans-serif;
-            font-weight: 400;
-            color: #FDECEF;
-            font-size: 20px;
-            line-height: 1.5;
-            max-width: 100%;
-        }
-    </style>
+    @media (max-width: 768px) {
+      .navbar-menu {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="project-archive">
-        <nav class="navbar">
-            <!-- Wrapped logo inside <a> tag to go back to home page -->
-            <a href="index.html">
-                <img class="logo" src="img/logo1.png" alt="Logo" />
-            </a>
-            <div class="nav-links">
-                <a href="about.html" class="nav-link">About</a>
-                <a href="demo.html" class="nav-link">Demo</a>
-                <a href="team.html" class="nav-link">Team</a>
-                <a href="timeline.html" class="nav-link">Timeline</a>
-            </div>
-            <div class="hamburger">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </div>
-        </nav>
-        <div class="main-content">
-            <h1>Project Archive.</h1>
-            <section id="deliverables" class="section">
-                <h2>Deliverables</h2>
-                <ul class="list">
-                    <li>Technological Feasibility (Assignment)</li>
-                    <li>Requirements Specification Document (Assignment)</li>
-                    <li>Project Info Mini-Video (Assignment)</li>
-                    <li>Technical Prototypes Demos (Assignment)</li>
-                    <li>TBA</li>
-                </ul>
-            </section>
-            <section id="meeting-minutes" class="section">
-                <h2>Meeting Minutes</h2>
-                <ul class="list">
-                    <li>In bibendum scelerisque</li>
-                    <li>Sem risus interdum facilisis; posuere massa egestas nisi. Tempus eget leo magna
-                      efficitur magna</li>
-                    <li>Natoque porttitor fames vehicula turpis montes. Aliquam dapibus curae praesent consequat
-                      molestie magna montes.</li>
-                    <li>Sem risus interdum facilisis; posuere massa egestas nisi. Tempus eget leo magna
-                      efficitur magna.</li>
-                    <li>Natoque porttitor fames vehicula turpis montes</li>
-                </ul>
-            </section>
-            <section id="competitor-products" class="section">
-                <h2>Competitor Products</h2>
-                <p>
-                    In bibendum scelerisque amet arcu risus ipsum netus auctor. Quis iaculis diam nibh erat leo dolor aenean.
-                    Aenean facilisis dui risus dignissim vel leo, non ut. Malesuada accumsan fames ex nisi nunc turpis
-                    suspendisse ornare. Sem risus interdum facilisis; posuere massa egestas nisi. Tempus eget leo magna
-                    efficitur magna. Natoque porttitor fames vehicula turpis montes. Aliquam dapibus curae praesent consequat
-                    molestie magna montes?
-                </p>
-            </section>
-            <section id="technologies-used" class="section">
-                <h2>Technologies Used</h2>
-                <p>
-                    In bibendum scelerisque amet arcu risus ipsum netus auctor. Quis iaculis diam nibh erat leo dolor aenean.
-                    Aenean facilisis dui risus dignissim vel leo, non ut. Malesuada accumsan fames ex nisi nunc turpis
-                    suspendisse ornare. Sem risus interdum facilisis; posuere massa egestas nisi. Tempus eget leo magna
-                    efficitur magna. Natoque porttitor fames vehicula turpis montes. Aliquam dapibus curae praesent consequat
-                    molestie magna montes?
-                </p>
-            </section>
+  <header>
+    <nav class="navbar">
+      <a href="index.html">
+        <img src="img/logo1.png" alt="Logo" width="120">
+      </a>
+      <div class="navbar-menu">
+        <a href="about.html" class="nav-link">About</a>
+        <a href="demo.html" class="nav-link">Demo</a>
+        <a href="team.html" class="nav-link">Team</a>
+        <a href="timeline.html" class="nav-link">Timeline</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="project-archive">
+    <div class="main-content">
+      <h1>Project Archive.</h1>
+      <div class="row">
+        <div class="column">
+          <h2>Deliverables</h2>
+          <ul class="list">
+            <li><a href="#">Blah</a></li>
+            <li><a href="#">Blah</a></li>
+            <li><a href="#">Blah</a></li>
+            <li><a href="#">Blah</a></li>
+            <li><a href="#">Blah</a></li>
+          </ul>
         </div>
+        <div class="column">
+          <h2>Meeting Minutes</h2>
+          <ul class="list">
+            <li><a href="#">Blah</a></li>
+            <li><a href="#">Blah</a></li>
+            <li><a href="#">Blah</a></li>
+            <li><a href="#">Blah</a></li>
+            <li><a href="#">Blah</a></li>
+          </ul>
+        </div>
+      </div>
+      <section class="section">
+        <h2>Competitor Products</h2>
+        <p>
+          In bibendum scelerisque amet arcu risus ipsum netus auctor. Quis iaculis diam nibh erat leo dolor aenean.
+          Aenean facilisis dui risus dignissim vel leo, non ut. Malesuada accumsan fames ex nisi nunc turpis suspendisse ornare.
+          Sem risus interdum facilisis; posuere massa egestas nisi. Tempus eget leo magna efficitur magna. Natoque porttitor fames vehicula turpis montes.
+          Aliquam dapibus curae praesent consequat molestie magna montes?
+        </p>
+      </section>
+      <section class="section">
+        <h2>Technologies Used</h2>
+        <p>
+          In bibendum scelerisque amet arcu risus ipsum netus auctor. Quis iaculis diam nibh erat leo dolor aenean.
+          Aenean facilisis dui risus dignissim vel leo, non ut. Malesuada accumsan fames ex nisi nunc turpis suspendisse ornare.
+          Sem risus interdum facilisis; posuere massa egestas nisi. Tempus eget leo magna efficitur magna. Natoque porttitor fames vehicula turpis montes.
+          Aliquam dapibus curae praesent consequat molestie magna montes?
+        </p>
+      </section>
     </div>
+  </div>
 </body>
 </html>
