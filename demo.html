@@ -1,191 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project Demo</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            font-family: "Helvetica", sans-serif;
-            line-height: 1.6;
-            color: #ffffff;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 83.99%);
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ecoWattch - Project Demo</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: "Helvetica", sans-serif;
+      color: #ffffff;
+      background: url("img/Rectangle 7.png") no-repeat center center/cover;
+      background-size: cover;
+      overflow-x: hidden;
+    }
 
-        .container {
-            max-width: 1728px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
+    .main-container {
+      width: 100vw;
+      min-height: 100vh;
+    }
 
-        .backdrop {
-            min-height: 100vh;
-            backdrop-filter: blur(40px) brightness(100%);
-            background: linear-gradient(180deg, rgba(32.57, 32.57, 32.57, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
-            background-image: url('img/Rectangle 7.png');
-            background-size: cover;
-        }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
 
-        header {
-            padding: 42px 0;
-        }
+    .logo {
+      width: 120px;
+      height: auto;
+    }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .nav-links {
+      display: flex;
+      gap: 60px;
+      margin-left: auto;
+    }
 
-        .logo {
-            width: 162px;
-            height: 48px;
-            cursor: pointer; /* Makes it clear it's clickable */
-        }
+    .nav-link {
+      color: #FDECEF;
+      font-size: 20px;
+      text-decoration: none;
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 60px;
-        }
+    .nav-link:hover {
+      color: grey;
+      transition: color 0.25s;
+    }
 
-        .nav-links a {
-            color: #fdecef;
-            text-decoration: none;
-            font-size: 20px;
-        }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      cursor: pointer;
+      z-index: 4;
+    }
 
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 7px;
-            cursor: pointer;
-        }
+    .hamburger div {
+      height: 4px;
+      background-color: #FDECEF;
+      width: 25px;
+    }
 
-        .hamburger span {
-            display: block;
-            width: 30px;
-            height: 4px;
-            background-color: #fdecef;
-        }
+    .demo-section {
+      max-width: 1200px;
+      margin: 100px auto;
+      padding: 0 20px;
+    }
 
-        main {
-            padding: 50px 0;
-        }
+    .demo-section h1 {
+      font-size: 56px;
+      font-weight: 300;
+      margin-bottom: 20px;
+    }
 
-        h1 {
-            font-size: 80px;
-            font-weight: 400;
-            margin-bottom: 30px;
-        }
+    .demo-section p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 40px;
+    }
 
-        .content {
-            display: flex;
-            gap: 50px;
-            margin-bottom: 50px;
-        }
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 20px;
+      padding-bottom: 20px;
+    }
 
-        .text-content {
-            flex: 1;
-        }
+    .carousel img {
+      scroll-snap-align: start;
+      height: 400px;
+      border-radius: 16px;
+      transition: transform 0.3s;
+    }
 
-        .image-placeholder {
-            flex: 1;
-            background-color: #23232399;
-            border-radius: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 80px;
-            font-weight: 700;
-            height: 286px;
-        }
+    .carousel img:hover {
+      transform: scale(1.05);
+    }
 
-        .video-placeholder {
-            background-color: #23232399;
-            border-radius: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 80px;
-            font-weight: 700;
-            height: 291px;
-            margin-top: 50px;
-        }
+    .video-card {
+      background: rgba(35, 35, 35, 0.8);
+      border-radius: 20px;
+      padding: 30px;
+      color: #fff;
+      text-align: center;
+      margin-top: 60px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
 
-        @media (max-width: 1024px) {
-            .content {
-                flex-direction: column;
-            }
+    .video-placeholder {
+      width: 100%;
+      height: 300px;
+      background-color: #1a1a1a;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ccc;
+      font-size: 20px;
+      margin-top: 20px;
+    }
 
-            .image-placeholder,
-            .video-placeholder {
-                width: 100%;
-            }
-        }
+    .sidebar {
+      position: fixed;
+      right: -300px;
+      top: 0;
+      width: 250px;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      color: #ffffff;
+      padding: 20px;
+      transition: right 0.3s ease;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      border-top-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
 
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
+    .sidebar.active {
+      right: 0;
+    }
 
-            .hamburger {
-                display: flex;
-            }
+    .team-members, .sponsor-info {
+      margin-bottom: 30px;
+    }
 
-            h1 {
-                font-size: 60px;
-            }
-        }
-    </style>
+    .team-member {
+      margin-bottom: 10px;
+    }
+
+    .sponsor-img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 15px;
+      object-fit: cover;
+    }
+
+    .archive-icon-button {
+      background-color: #262626;
+      border: none;
+      color: #ffffff;
+      padding: 12px 16px;
+      font-size: 16px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .archive-icon-button:hover {
+      background-color: #444;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .demo-section h1 {
+        font-size: 42px;
+      }
+
+      .carousel img {
+        height: 280px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="backdrop">
-        <div class="container">
-            <header>
-                <nav>
-                    <!-- Wrapped the logo inside <a> tag to go back to home page -->
-                    <a href="index.html">
-                        <img class="logo" src="img/logo1.png" alt="Logo" />
-                    </a>
-                    <div class="nav-links">
-                        <a href="about.html" class="nav-link">About</a>
-                        <a href="demo.html" class="nav-link">Demo</a>
-                        <a href="team.html" class="nav-link">Team</a>
-                        <a href="timeline.html" class="nav-link">Timeline</a>
-                    </div>
-                    <div class="hamburger">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </nav>
-            </header>
-            <main>
-                <h1>Project Demo</h1>
-                <div class="content">
-                    <div class="text-content">
-                        <p>
-                            The demo page will showcase the app’s functionalities, 
-                            including live data visualization, notifications, and a 
-                            leaderboard for energy savings. Users will be able to explore 
-                            the app’s interface and see how their actions influence energy 
-                            efficiency in real time.
-                        </p>
-                    </div>
-                    <div class="image-placeholder">PHOTO</div>
-                </div>
-                <p>
-                    In bibendum scelerisque amet arcu risus ipsum netus auctor. Quis iaculis diam nibh erat leo dolor aenean.
-                    Aenean facilisis dui risus dignissim vel leo, non ut. Malesuada accumsan fames ex nisi nunc turpis
-                    suspendisse ornare. Sem risus interdum facilisis; posuere massa egestas nisi. Tempus eget leo magna
-                    efficitur magna. Natoque porttitor fames vehicula turpis montes. Aliquam dapibus curae praesent consequat
-                    molestie magna montes?
-                </p>
-                <div class="video-placeholder">VIDEO</div>
-            </main>
-        </div>
+<div class="main-container">
+  <div class="navbar">
+    <a href="index.html"><img src="img/logo1.png" alt="Logo" class="logo" /></a>
+    <div class="nav-links">
+      <a href="about.html" class="nav-link">About</a>
+      <a href="demo.html" class="nav-link">Demo</a>
+      <a href="team.html" class="nav-link">Team</a>
+      <a href="timeline.html" class="nav-link">Timeline</a>
     </div>
+    <div class="hamburger" onclick="toggleSidebar()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h1>Project Demo</h1>
+    <p>
+      Dive into ecoWattch — our Android-based mobile application designed to make energy conservation fun and impactful.
+      Watch how users receive real-time alerts, track energy consumption patterns, and compete with peers in Power Hour challenges.
+    </p>
+
+    <h2>APP UI Screens</h2>
+    <div class="carousel">
+      <img src="img/UI2.png" alt="UI1" />
+      <img src="img/UI1.png" alt="UI2" />
+      <img src="img/UI3.png" alt="UI3" />
+      <img src="img/UI4.png" alt="UI4" />
+      <img src="img/UI5.png" alt="UI5" />
+    </div>
+
+    <div class="video-card">
+      <h2>Video Demo</h2>
+      <p>We’ll soon be uploading a recorded and edited video demo to walk you through our live app features.</p>
+      <div class="video-placeholder">Video coming soon...</div>
+    </div>
+
+    <p style="margin-top: 40px;">
+      Built with Android Studio, AWS and Azure, our demo demonstrates seamless user authentication, live notifications,
+      intuitive data visualization, and a reward-driven leaderboard system — all wrapped in a clean, student-focused UI.
+    </p>
+  </div>
+</div>
+
+<aside class="sidebar" id="sidebar">
+  <section class="team-members">
+    <h2>Our Team</h2>
+    <div class="team-member"><strong>Avnish Kumar Sinha</strong></div>
+    <div class="team-member"><strong>Collin Boyer</strong></div>
+    <div class="team-member"><strong>Risa Walles</strong></div>
+    <div class="team-member"><strong>Valentino Valero</strong></div>
+  </section>
+  <section class="sponsor-info">
+    <h2>Our Sponsor</h2>
+    <img src="img/Client.jpg" alt="Sponsor Photo" class="sponsor-img" />
+    <p>OP Ravi<br><em>Director of Product – Energy Transformation</em></p>
+    <button class="archive-icon-button" onclick="location.href='archive.html'">
+      <i>📁</i> View Archive
+    </button>
+  </section>
+</aside>
+
+<script>
+  function toggleSidebar() {
+    document.getElementById("sidebar").classList.toggle("active");
+  }
+</script>
 </body>
 </html>

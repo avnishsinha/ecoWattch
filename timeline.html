@@ -21,37 +21,59 @@
             position: absolute;
             top: 20px;
             left: 20px;
-            right: 45px;
+            right: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            z-index: 100;
+        }
+
+        .navbar-logo img {
+            max-width: 120px;
+            height: auto;
         }
 
         .navbar-menu {
             display: flex;
-            gap: 60px;
+            gap: 30px;
         }
 
         .navbar-menu a {
             color: #ffffff;
             text-decoration: none;
             font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-menu a:hover {
+            color: #5368C4;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
         }
 
         /* Hero Section */
         .hero {
             background: url("img/Rectangle 7.png") no-repeat center center/cover;
             height: 50vh;
+            min-height: 250px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             padding: 0 20px;
             flex-direction: column;
+            position: relative;
         }
 
         .hero h1 {
-            font-size: 4rem;
+            font-size: 3.5rem;
             margin-bottom: 10px;
         }
 
@@ -64,12 +86,9 @@
         .timeline-container {
             width: 100%;
             overflow-x: auto;
-            white-space: nowrap;
-            padding: 50px 200px; /* Increased left padding */
+            padding: 30px 0;
             position: relative;
-            display: flex;
-            justify-content: flex-start;
-            scroll-behavior: auto;
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
         }
 
         .timeline-wrapper {
@@ -77,7 +96,8 @@
             width: max-content;
             position: relative;
             align-items: center;
-            padding: 20px 50px; /* Ensures spacing at start */
+            padding: 20px 80px;
+            min-width: 100%;
         }
 
         .timeline {
@@ -97,16 +117,17 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 100px 50px;
+            margin: 50px 40px;
+            white-space: normal; /* Allow text wrapping */
+            max-width: 250px;
         }
 
-        /* Fix Left and Right Visibility */
         .timeline-event:first-child {
-            margin-left: 200px; /* Ensure it's fully visible */
+            margin-left: 100px;
         }
 
         .timeline-event:last-child {
-            margin-right: 200px; /* Ensure rightmost event is visible */
+            margin-right: 100px;
         }
 
         .timeline-event::before {
@@ -122,7 +143,7 @@
         }
 
         .timeline-event p {
-            font-size: 20px;
+            font-size: 18px;
             margin-bottom: 10px;
         }
 
@@ -137,30 +158,135 @@
         .deliverable a {
             color: #5368C4;
             text-decoration: none;
-            font-size: 20px;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        .deliverable a:hover {
+            text-decoration: underline;
+        }
+
+        /* Scroll indicators */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .scroll-text {
+            color: #ffffff;
+            font-size: 14px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
         }
 
         /* Responsive Styles */
-        @media (max-width: 768px) {
-            .navbar-menu {
-                display: none;
+        @media (max-width: 992px) {
+            .timeline-event {
+                min-width: 180px;
+                margin: 40px 30px;
             }
+            
+            .timeline-event p {
+                font-size: 16px;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
 
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .navbar-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background-color: rgba(9, 9, 9, 0.95);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: right 0.3s ease;
+                gap: 40px;
+            }
+            
+            .navbar-menu.active {
+                right: 0;
+            }
+            
             .hero h1 {
                 font-size: 2.5rem;
             }
-
+            
             .hero p {
                 font-size: 1.2rem;
             }
-
-            .timeline-container {
-                padding: 30px 50px; /* Adjusted padding for mobile */
+            
+            .timeline-event {
+                min-width: 150px;
+                margin: 30px 25px;
             }
+            
+            .timeline-event:first-child {
+                margin-left: 60px;
+            }
+            
+            .timeline-event:last-child {
+                margin-right: 60px;
+            }
+        }
 
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
             .timeline-event:nth-child(odd),
             .timeline-event:nth-child(even) {
                 transform: translateY(0);
+            }
+            
+            .timeline-wrapper {
+                padding: 20px 30px;
+            }
+            
+            .timeline-event {
+                min-width: 140px;
+                margin: 20px 20px;
+            }
+            
+            .timeline-event p {
+                font-size: 14px;
+            }
+            
+            .timeline-event::before {
+                top: -32px;
+            }
+            
+            .timeline {
+                top: 0;
+            }
+            
+            .timeline-event:first-child {
+                margin-left: 40px;
+            }
+            
+            .timeline-event:last-child {
+                margin-right: 40px;
             }
         }
     </style>
@@ -170,24 +296,30 @@
     <!-- Hero Section -->
     <header class="hero">
         <nav class="navbar">
-            <!-- Wrapped the logo inside <a> tag to go back to home page -->
-            <a href="index.html">
-                <img src="img/logo1.png" alt="Logo" width="120">
-            </a>
-            <div class="navbar-menu">
-              <a href="about.html" class="nav-link">About</a>
-              <a href="demo.html" class="nav-link">Demo</a>
-              <a href="team.html" class="nav-link">Team</a>
-              <a href="timeline.html" class="nav-link">Timeline</a>
+            <!-- Logo with home link -->
+            <div class="navbar-logo">
+                <a href="index.html">
+                    <img src="img/logo1.png" alt="Logo" width="120">
+                </a>
+            </div>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            <div class="navbar-menu" id="navMenu">
+                <a href="about.html" class="nav-link">About</a>
+                <a href="demo.html" class="nav-link">Demo</a>
+                <a href="team.html" class="nav-link">Team</a>
+                <a href="timeline.html" class="nav-link">Timeline</a>
             </div>
         </nav>
         <h1>The Timeline</h1>
         <p>Please scroll through our progress</p>
+        <div class="scroll-indicator">
+            <span class="scroll-text">Scroll horizontally →</span>
+        </div>
     </header>
 
     <!-- Timeline -->
     <main>
-        <div class="timeline-container">
+        <div class="timeline-container" id="timelineContainer">
             <div class="timeline-wrapper">
                 <div class="timeline"></div>
 
@@ -213,17 +345,69 @@
     </main>
 
     <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        if (menuToggle && navMenu) {
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+            
+            // Close menu when a link is clicked
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                });
+            });
+        }
+        
         // Smooth scrolling effect using mouse wheel
-        const timelineContainer = document.querySelector(".timeline-container");
-        timelineContainer.addEventListener("wheel", (evt) => {
-            evt.preventDefault();
-            timelineContainer.scrollLeft += evt.deltaY;
-        });
-
-        // Auto-scroll to the start on load
-        window.onload = function() {
-            timelineContainer.scrollLeft = 0;
-        };
+        const timelineContainer = document.getElementById('timelineContainer');
+        if (timelineContainer) {
+            timelineContainer.addEventListener("wheel", (evt) => {
+                evt.preventDefault();
+                timelineContainer.scrollLeft += evt.deltaY;
+            });
+            
+            // Touch-based horizontal scrolling indication
+            let isScrolling = false;
+            let startX;
+            let scrollLeft;
+            
+            timelineContainer.addEventListener('touchstart', (e) => {
+                isScrolling = true;
+                startX = e.touches[0].pageX - timelineContainer.offsetLeft;
+                scrollLeft = timelineContainer.scrollLeft;
+            });
+            
+            timelineContainer.addEventListener('touchend', () => {
+                isScrolling = false;
+            });
+            
+            timelineContainer.addEventListener('touchmove', (e) => {
+                if (!isScrolling) return;
+                e.preventDefault();
+                const x = e.touches[0].pageX - timelineContainer.offsetLeft;
+                const walk = (x - startX) * 2; // Scroll speed multiplier
+                timelineContainer.scrollLeft = scrollLeft - walk;
+            });
+            
+            // Auto-scroll to the start on load
+            window.onload = function() {
+                timelineContainer.scrollLeft = 0;
+                
+                // Auto-hide scroll indicator after 5 seconds
+                setTimeout(() => {
+                    const scrollIndicator = document.querySelector('.scroll-indicator');
+                    if (scrollIndicator) {
+                        scrollIndicator.style.opacity = '0';
+                        scrollIndicator.style.transition = 'opacity 1s ease';
+                    }
+                }, 5000);
+            };
+        }
     </script>
 
 </body>

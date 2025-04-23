@@ -19,7 +19,7 @@
 
     .main-container {
       width: 100vw;
-      height: 100vh;
+      height: 100%;
       position: relative;
     }
 
@@ -49,10 +49,21 @@
       color: #FDECEF;
     }
 
-    .info-box {
-      width: 350px;
-      height: 318px;
+    .info-wrapper {
       position: absolute;
+      top: 800px;
+      left: 50px;
+      right: 50px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: space-between;
+    }
+
+    .info-box {
+      width: 330px;
+      height: 318px;
+      position: relative;
       background: rgba(0, 0, 0, 0.5);
       border-radius: 30px;
       backdrop-filter: blur(40px);
@@ -68,6 +79,8 @@
       color: #828282;
       font-size: 80px;
       font-weight: 400;
+      left: 22px;
+      top: 7px;
     }
 
     .info-box .title {
@@ -75,6 +88,8 @@
       color: #FDECEF;
       font-size: 25px;
       font-weight: 700;
+      left: 22px;
+      top: 105px;
     }
 
     .info-box .description {
@@ -82,7 +97,9 @@
       color: #6E6E6E;
       font-size: 15px;
       font-weight: 400;
-      width: 303px;
+      width: 285px;
+      left: 22px;
+      top: 140px;
     }
 
     .navbar {
@@ -166,23 +183,44 @@
       object-fit: cover;
     }
 
-    .sidebar-footer {
-      margin-top: auto;
-      padding-top: 20px;
-    }
-
-    .archive-button {
+    .archive-icon-button {
       background-color: #262626;
       border: none;
       color: #ffffff;
-      padding: 10px 20px;
-      font-size: 18px;
-      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 16px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
       cursor: pointer;
-      align-self: flex-start;
+      transition: background-color 0.3s ease;
+      margin-top: 15px;
     }
 
-    /* Responsive Enhancements */
+    .archive-icon-button:hover {
+      background-color: #444;
+    }
+
+    .archive-icon-button i {
+      font-size: 18px;
+    }
+
+    @media (max-width: 1024px) {
+      .info-wrapper {
+        flex-direction: column;
+        align-items: center;
+        top: auto;
+        margin-top: 30px;
+        position: static;
+        padding-bottom: 30px;
+      }
+
+      .info-box {
+        width: 90% !important;
+      }
+    }
+
     @media (max-width: 768px) {
       .text-block {
         width: 90%;
@@ -191,17 +229,18 @@
         left: 20px;
       }
 
-      .info-box {
-        width: 90%;
-        height: auto;
-        left: 5%;
-        top: auto;
-        margin-top: 20px;
-        position: relative;
-      }
-
       .nav-links {
         display: none;
+      }
+
+      .sidebar {
+        width: 100%;
+        border-radius: 0;
+      }
+
+      .archive-icon-button {
+        width: 100%;
+        justify-content: center;
       }
     }
   </style>
@@ -227,46 +266,43 @@
       <span>Watt</span><span>ch Your Power, </span><span>Watt</span><span>ch Your Impact.</span>
     </div>
 
-    <div class="info-box" style="left: 50px; top: 800px;">
-      <div class="number" style="left: 22px; top: 7px;">01</div>
-      <div class="title" style="left: 22px; top: 105px;">The Problem</div>
-      <div class="description" style="left: 22px; top: 140px;">
-        Buildings in the U.S. consume 76% of all electricity and account 
-        for 40% of total CO₂ emissions. Despite global efforts, the gap between 
-        actual climate performance and decarbonization goals continues to widen. Universities
-        and organizations need effective ways to monitor energy usage and influence behavior 
-        to reduce carbon footprints.
+    <div class="info-wrapper">
+      <div class="info-box">
+        <div class="number">01</div>
+        <div class="title">The Problem</div>
+        <div class="description">
+          Buildings in the U.S. consume 76% of all electricity and account 
+          for 40% of total CO₂ emissions. Despite global efforts, the gap between 
+          actual climate performance and decarbonization goals continues to widen.
+        </div>
       </div>
-    </div>
 
-    <div class="info-box" style="left: 420px; top: 800px;">
-      <div class="number" style="left: 22px; top: 7px;">02</div>
-      <div class="title" style="left: 22px; top: 105px;">The Solution</div>
-      <div class="description" style="left: 22px; top: 140px;">
-        Our project aims to develop a mobile application that provides real-time energy consumption
-        insights and actionable recommendations. This app will integrate with Willow's data platform 
-        to display energy trends, send alerts for peak consumption, and gamify energy-saving behaviors 
-        among students and staff.
+      <div class="info-box">
+        <div class="number">02</div>
+        <div class="title">The Solution</div>
+        <div class="description">
+          Our project aims to develop a mobile application that provides real-time energy consumption
+          insights and actionable recommendations. This app will integrate with Willow's data platform 
+          to display energy trends, send alerts, and gamify energy-saving behaviors.
+        </div>
       </div>
-    </div>
 
-    <div class="info-box" style="left: 790px; top: 800px;">
-      <div class="number" style="left: 22px; top: 7px;">03</div>
-      <div class="title" style="left: 22px; top: 105px;">Our Motivation</div>
-      <div class="description" style="left: 22px; top: 140px;">
-        Sustainability is a growing concern, and we believe technology can empower individuals
-        to make a difference. By providing real-time data and incentives, we hope to encourage 
-        energy-efficient behavior in university communities.
+      <div class="info-box">
+        <div class="number">03</div>
+        <div class="title">Our Motivation</div>
+        <div class="description">
+          Sustainability is a growing concern, and we believe technology can empower individuals
+          to make a difference by encouraging energy-efficient behavior in university communities.
+        </div>
       </div>
-    </div>
 
-    <div class="info-box" style="left: 1160px; top: 800px;">
-      <div class="number" style="left: 22px; top: 7px;">04</div>
-      <div class="title" style="left: 22px; top: 105px;">Expected Outcome</div>
-      <div class="description" style="left: 22px; top: 140px;">
-        Increased awareness of energy consumption and emissions impact.
-        Behavioral changes that lead to more energy-efficient practices.
-        Reduced energy costs for institutions and measurable impact in lowering emissions.
+      <div class="info-box">
+        <div class="number">04</div>
+        <div class="title">Expected Outcome</div>
+        <div class="description">
+          Increased awareness of energy consumption and emissions impact. 
+          Behavioral changes that lead to energy-efficient practices and reduced institutional energy costs.
+        </div>
       </div>
     </div>
   </div>
@@ -274,19 +310,19 @@
   <aside class="sidebar">
     <section class="team-members">
       <h2>Our Team</h2>
-      <div class="team-member"><strong>Member 1:</strong> Avnish Kumar Sinha</div>
-      <div class="team-member"><strong>Member 2:</strong> Collin Boyer</div>
-      <div class="team-member"><strong>Member 3:</strong> Risa Walles</div>
-      <div class="team-member"><strong>Member 4:</strong> Valentino Valero</div>
+      <div class="team-member"><strong>Avnish Kumar Sinha</strong></div>
+      <div class="team-member"><strong>Collin Boyer</strong></div>
+      <div class="team-member"><strong>Risa Walles</strong></div>
+      <div class="team-member"><strong>Valentino Valero</strong></div>
     </section>
     <section class="sponsor-info">
       <h2>Our Sponsor</h2>
       <img src="img/Client.jpg" alt="Sponsor Photo" class="sponsor-img" />
-      <p>OP Ravi, Director of Product, Energy Transformation</p>
+      <p>OP Ravi<br><em>Director of Product – Energy Transformation</em></p>
+      <button class="archive-icon-button" onclick="location.href='archive.html'">
+        <i>📁</i> View Archive
+      </button>
     </section>
-    <div class="sidebar-footer">
-      <button class="archive-button" onclick="location.href='archive.html'">Archive</button>
-    </div>
   </aside>
 
   <script>

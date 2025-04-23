@@ -1,241 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Team ecoWattch</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            background-image: url("img/Rectangle 7.png");
-            background-size: cover;
-            font-family: "Helvetica", sans-serif;
-            -webkit-font-smoothing: antialiased;
-            box-sizing: border-box;
-            line-height: 1.6;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team ecoWattch</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: "Helvetica", sans-serif;
+      background-image: url("img/Rectangle 7.png");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #ffffff;
+    }
 
-        .page-wrapper {
-            min-height: 100vh;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 83.99%);
-            backdrop-filter: blur(40px) brightness(100%);
-            -webkit-backdrop-filter: blur(40px) brightness(100%);
-        }
+    .page-wrapper {
+      min-height: 100vh;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 84%);
+      backdrop-filter: blur(40px) brightness(100%);
+      padding-top: 120px;
+    }
 
-        .content {
-            max-width: 1640px;
-            margin: 0 auto;
-            padding: 42px 44px;
-        }
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px 40px;
+      backdrop-filter: blur(10px);
+      flex-wrap: wrap;
+    }
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 86px;
-        }
+    .logo {
+      width: 120px;
+      height: auto;
+    }
 
-        .logo {
-            width: 200px;
-            height: 50px;
-            cursor: pointer; /* Makes it clear it's clickable */
-        }
+    .nav-links {
+      display: flex;
+      gap: 40px;
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 40px;
-        }
+    .nav-link {
+      color: #fdecef;
+      font-size: 20px;
+      text-decoration: none;
+    }
 
-        .nav-link {
-            color: #fdecef;
-            font-size: 20px;
-            text-decoration: none;
-        }
+    .nav-link:hover {
+      color: #d1a6ac;
+    }
 
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 7px;
-            cursor: pointer;
-        }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 6px;
+      background: none;
+      border: none;
+    }
 
-        .hamburger div {
-            width: 30px;
-            height: 4px;
-            background-color: #fdecef;
-        }
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #fdecef;
+    }
 
-        .main-content {
-            color: #ffffff;
-        }
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: rgba(0, 0, 0, 0.95);
+      padding: 20px 0;
+      width: 100%;
+    }
 
-        h1 {
-            font-size: 100px;
-            font-weight: 400;
-            margin-bottom: 55px;
-        }
+    .mobile-menu.active {
+      display: flex;
+    }
 
-        .team-member {
-            margin-bottom: 50px;
-        }
+    .mobile-menu a {
+      color: #fdecef;
+      font-size: 20px;
+      text-decoration: none;
+      margin: 10px 0;
+    }
 
-        .team-member h2 {
-            font-size: 25px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
+    .content {
+      max-width: 1640px;
+      margin: 0 auto;
+      padding: 42px 20px;
+    }
 
-        .team-member p {
-            font-size: 25px;
-            font-weight: 400;
-        }
+    h1 {
+      font-size: clamp(40px, 8vw, 100px);
+    }
 
-        .roles-section {
-            margin-top: 40px;
-        }
+    .team-members,
+    .roles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
 
-        .roles-section h2 {
-            font-size: 80px;
-            font-weight: 700;
-            margin-bottom: 30px;
-        }
+    .team-member,
+    .role {
+      background: rgba(70, 70, 70, 0.2);
+      padding: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
 
-        .roles-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
+    .team-member:hover,
+    .role:hover {
+      transform: translateY(-5px);
+    }
 
-        .role {
-            text-align: center;
-        }
+    .team-member img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
 
-        .role h3 {
-            font-size: 25px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
+    .group-photo {
+      margin: 60px 0 40px;
+      height: clamp(200px, 40vw, 437px);
+      background: rgba(70, 70, 70, 0.4);
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-        .role p {
-            font-size: 25px;
-            font-weight: 400;
-        }
+    .group-photo p {
+      font-size: clamp(32px, 8vw, 80px);
+      font-weight: bold;
+    }
 
-        .group-photo {
-            background-color: rgba(70, 70, 70, 0.4);
-            border-radius: 20px;
-            height: 437px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 40px;
-        }
-
-        .group-photo p {
-            font-size: 100px;
-            font-weight: 700;
-            color: #ffffff;
-        }
-
-        @media (max-width: 768px) {
-            .content {
-                padding: 20px;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            h1 {
-                font-size: 60px;
-            }
-
-            .roles-section h2 {
-                font-size: 50px;
-            }
-
-            .roles-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .group-photo p {
-                font-size: 60px;
-            }
-        }
-    </style>
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="page-wrapper">
-        <div class="content">
-            <nav class="navbar">
-                <!-- Wrapped logo inside <a> tag to go back to home page -->
-                <a href="index.html">
-                    <img class="logo" src="img/logo1.png" alt="Logo" />
-                </a>
-                <div class="nav-links">
-                    <a href="about.html" class="nav-link">About</a>
-                    <a href="demo.html" class="nav-link">Demo</a>
-                    <a href="team.html" class="nav-link">Team</a>
-                    <a href="timeline.html" class="nav-link">Timeline</a>
-                </div>
-                <div class="hamburger">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-            </nav>
-            <main class="main-content">
-                <h1>Meet the team.</h1>
-                <section class="team-members">
-                    <article class="team-member">
-                        <h2>Collin Boyer:</h2>
-                        <p>Details about Collin...</p>
-                    </article>
-                    <article class="team-member">
-                        <h2>Avnish Kumar Sinha</h2>
-                        <p>Details about Avnish...</p>
-                    </article>
-                    <article class="team-member">
-                        <h2>Risa Walles</h2>
-                        <p>Details about Risa...</p>
-                    </article>
-                    <article class="team-member">
-                        <h2>Valentino Valero</h2>
-                        <p>Details about Valentino...</p>
-                    </article>
-                </section>
-                <section class="roles-section">
-                    <h2>Roles and Responsibilities</h2>
-                    <div class="roles-grid">
-                        <div class="role">
-                            <h3>Collin Boyer</h3>
-                            <p>Team Lead<br />Backend Dev</p>
-                        </div>
-                        <div class="role">
-                            <h3>Avnish Kumar Sinha</h3>
-                            <p>Web Developer<br />Coder</p>
-                        </div>
-                        <div class="role">
-                            <h3>Risa Walles</h3>
-                            <p>Coder<br />Backend Dev</p>
-                        </div>
-                        <div class="role">
-                            <h3>Valentino Valero</h3>
-                            <p>Web Designer<br />Architect</p>
-                        </div>
-                    </div>
-                </section>
-                <div class="group-photo">
-                    <p>GROUP PHOTO</p>
-                </div>
-            </main>
-        </div>
+  <nav class="navbar">
+    <a href="index.html">
+      <img class="logo" src="img/logo1.png" alt="ecoWattch Logo" />
+    </a>
+    <div class="nav-links">
+      <a class="nav-link" href="about.html">About</a>
+      <a class="nav-link" href="demo.html">Demo</a>
+      <a class="nav-link" href="team.html">Team</a>
+      <a class="nav-link" href="timeline.html">Timeline</a>
     </div>
+    <button class="hamburger" id="menuToggle" aria-label="Toggle Menu">
+      <div></div>
+      <div></div>
+      <div></div>
+    </button>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="about.html">About</a>
+      <a href="demo.html">Demo</a>
+      <a href="team.html">Team</a>
+      <a href="timeline.html">Timeline</a>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+    <div class="content">
+      <main class="main-content">
+        <h1>Meet the team.</h1>
+
+        <section class="team-members">
+          <article class="team-member">
+            <img src="img/avnish.jpg" alt="Avnish Kumar Sinha" />
+            <h2>👨‍💻 Avnish Kumar Sinha</h2>
+            <p><strong>Role:</strong> Front-End Developer & Technical Strategist
+                      <br/>A Computer Science major from NAU, Avnish brings a deep technical
+                       foundation and hands-on development expertise to ecoWattch. With experience as a
+                        TA and front-end developer, his portfolio includes real-time apps, AI assistants, 
+                        and a personal 44TB NAS system. He leads UI integration and optimization while fueling 
+                        innovation through his interests in AI, e-commerce, and emerging tech.</p>
+          </article>
+
+          <article class="team-member">
+            <img src="img/collin.png" alt="Collin Boyer" />
+            <h2>🧐 Collin Boyer</h2>
+            <p><strong>Role:</strong> Team Lead & Backend Developer
+                            <br/>Collin, an Applied CS major, excels in 
+                            backend systems and mobile app development. 
+                            With experience in game dev, full-stack design, 
+                            and peer instruction as a TA, he guides team coordination 
+                            and backend implementation. His passion for interactive design 
+                            and cross-functional leadership drives ecoWattch’s architecture.</p>
+          </article>
+
+          <article class="team-member">
+            <img src="img/risa.jpg" alt="Risa Walles" />
+            <h2>🧬 Risa Walles</h2>
+            <p><strong>Role:</strong> Backend Developer & Code Quality Lead
+                            <br/>Risa studies Software Engineering and contributes 
+                            strong skills in Python, C/C++, and structured design. Her 
+                            TA roles in Data Structures and CS Fundamentals sharpened her 
+                            review and debugging abilities. She brings a gaming-savvy perspective 
+                            to ensure system logic and code integrity within ecoWattch.</p>
+          </article>
+
+          <article class="team-member">
+            <img src="img/valentino.jpg" alt="Valentino Valero" />
+            <h2>🎨 Valentino Valero</h2>
+            <p><strong>Role:</strong> UI/UX Designer & Systems Architect
+                            <br/>A Multidisciplinary Engineer with a UI/UX focus, 
+                            Valentino combines visual storytelling and systems thinking. 
+                            With expertise in Figma and agile practices, he creates sleek, 
+                            accessible interfaces and shapes the visual identity of ecoWattch. 
+                            His background includes robotics, HCI, and minimalist cyberpunk design.</p>
+          </article>
+        </section>
+
+        <div class="group-photo">
+          <p>GROUP PHOTO</p>
+          <!-- Replace with <img src="img/group-photo.jpg" alt="Group Photo" style="max-height:100%; max-width:100%; border-radius:20px;"> when available -->
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("active");
+    });
+
+    mobileMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("active");
+      });
+    });
+  </script>
 </body>
 </html>
