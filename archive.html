@@ -17,22 +17,25 @@
     .navbar {
       position: absolute;
       top: 20px;
-      left: 45px;
-      right: 45px;
+      left: 20px;
+      right: 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     .navbar-menu {
       display: flex;
-      gap: 60px;
+      gap: 40px;
+      flex-wrap: wrap;
     }
 
     .navbar-menu a {
       color: #ffffff;
       text-decoration: none;
-      font-size: 18px;
+      font-size: 18px; /* Keep consistent font size */
+      white-space: nowrap;
     }
 
     .container {
@@ -80,6 +83,7 @@
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
+      gap: 40px;
     }
 
     .column {
@@ -87,14 +91,32 @@
     }
 
     @media (max-width: 768px) {
-      .navbar-menu {
-        display: none;
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
       }
+
+      .navbar-menu {
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+      }
+
+      .container {
+        padding: 100px 20px 30px;
+      }
+
       .row {
         flex-direction: column;
       }
+
       h1, h2, p, ul {
         text-align: center;
+      }
+
+      .column {
+        flex: 1 1 100%;
       }
     }
   </style>
@@ -149,17 +171,17 @@
       <strong>3. Lucid BuildingOS:</strong> Visualizes real-time energy use in buildings but doesn’t offer gamified or mobile-first experiences.
       <br><br>
       ecoWattch blends real-time energy tracking with student-facing gamification — something none of the current competitors fully offer.
+      We aim to create a unique experience that not only tracks energy usage but also encourages students to engage with their dorm's energy consumption in a fun and interactive way.
     </p>
 
     <h2>Technologies Used</h2>
     <p>
       Our project integrates a modern stack optimized for performance, scalability, and engagement:
       <br><br>
-      • <strong>Frontend:</strong> Android (Java/Kotlin)<br>
-      • <strong>Backend:</strong> AWS RDS MySQL<br>
-      • <strong>Push Notifications:</strong> Firebase Cloud Messaging<br>
-      • <strong>Authentication:</strong> Firebase Auth<br>
-      • <strong>Version Control:</strong> Git + GitHub<br>
+      • <strong>Frontend:</strong> Android Studio (Java)<br>
+      • <strong>Backend:</strong>Microsoft Azure, AWS RDS MySQL<br>
+      • <strong>Notifications System:</strong>Push Notifications <br>
+      • <strong>Codebase & Version Control:</strong> Git + GitHub<br>
       • <strong>UI Design:</strong> Figma (Mobile-first + Gamified)<br><br>
       This tech stack supports our real-time leaderboard, dorm activity tracking, and personalized energy feedback system.
     </p>
