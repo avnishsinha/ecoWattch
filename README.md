@@ -1,7 +1,3 @@
-Here's your updated README file:  
-
----
-
 # 🌿 ecoWattch Version 1.0.1  
 
 ecoWattch is a group project initiated for our **CS 476 Capstone** and will continue development through 2025. The project website has now been uploaded to the **NAU CES Share Servers** and can be accessed at:  
@@ -20,7 +16,3 @@ The website is nearing the completion of its initial setup. Future updates will 
 ## 📜 License  
 
 [MIT License](https://choosealicense.com/licenses/mit/)  
-
----
-
-Let me know if you'd like any further refinements! 🚀
