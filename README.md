@@ -1,3 +1,4 @@
+![ecoWattchLogo]("C:\Users\heyoi\Desktop\repos\ecoWattch\img\biglogo.svg")
 # 🌿 ecoWattch Version 1.0.1  
 
 ecoWattch is a group project initiated for our **CS 476 Capstone** and will continue development through 2025. The project website has now been uploaded to the **NAU CES Share Servers** and can be accessed at:  
@@ -9,7 +10,7 @@ The website is nearing the completion of its initial setup. Future updates will 
 ## 👨‍💻 Developers  
 
 * **Avnish Kumar Sinha** - *Web Developer, Coder* - [avnishsinha](https://github.com/avnishsinha)  
-* **Valentino Valero** - *Web Designer* - [vsv7nau](https://github.com/vsv7nau)  
+* **Valentino Valero** - *Web Designer* - [tino767](https://github.com/tino767)  
 * **Collin Boyer** - *Coder* - [ZenzeroBro](https://github.com/ZenzeroBro)  
 * **Risa Walles** - *Coder* - [Rmw395](https://github.com/rmw395)  
 
