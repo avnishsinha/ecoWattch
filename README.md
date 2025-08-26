@@ -9,7 +9,7 @@ The website is nearing the completion of its initial setup. Future updates will 
 ## 👨‍💻 Developers  
 
 * **Avnish Kumar Sinha** - *Web Developer, Coder* - [avnishsinha](https://github.com/avnishsinha)  
-* **Valentino Valero** - *Web Designer* - [vsv7nau](https://github.com/vsv7nau)  
+* **Valentino Valero** - *Web Designer* - [tino767](https://github.com/tino767)  
 * **Collin Boyer** - *Coder* - [ZenzeroBro](https://github.com/ZenzeroBro)  
 * **Risa Walles** - *Coder* - [Rmw395](https://github.com/rmw395)  
 
